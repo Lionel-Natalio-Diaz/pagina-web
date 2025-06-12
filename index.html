@@ -1,121 +1,268 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Factura Flash · Automatización de facturas para estudios contables</title>
-  <meta name="description"
-        content="Automatizá la emisión de facturas de tus clientes en segundos y ofrecé un servicio premium a tu estudio contable." />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@700&display=swap"
-        rel="stylesheet">
-
-  <!-- Tailwind CSS (CDN) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factura Flash - Automatizá tu Facturación</title>
+  <meta name="description" content="Factura Flash - Automatización de facturación electrónica para contadores y monotributistas. Ahorra tiempo y evita errores. Contactanos por WhatsApp o Email.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <link rel="icon" type="image/svg+xml" href="assets/vectori.svg">
   <style>
-    :root {
-      --flash-yellow: #FEC727;
-      --flash-orange: #F3843B;
-      --flash-grafito: #443A48;
-      --flash-bg: #F9FAFB;
-    }
-    body {
-      font-family: Inter, sans-serif;
-      background: var(--flash-bg);
-      color: var(--flash-grafito);
-    }
-    h1, h2, h3 {
-      font-family: Poppins, sans-serif;
-    }
+    body { font-family: 'Montserrat', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .wave { width: 100%; height: 64px; margin-bottom: -1px; display: block; }
+    @media (max-width: 768px) { .wave { height: 32px; } }
   </style>
 </head>
-<body class="scroll-smooth">
-
-  <!-- NAVBAR -->
-  <header id="nav"
-          class="fixed inset-x-0 top-0 z-50 bg-[rgba(249,250,251,0.9)] backdrop-blur-md shadow-sm">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2">
-      <a href="#top" class="flex items-center gap-2">
-        <img src="./flashito.svg" alt="Flashito" class="h-12 w-12 md:h-16 md:w-16" />
-        <span class="font-bold text-lg tracking-tight">Factura Flash</span>
-      </a>
-      <nav class="hidden gap-8 md:flex">
-        <a href="#productos" class="hover:text-[var(--flash-yellow)]">Productos</a>
-        <a href="#beneficios" class="hover:text-[var(--flash-yellow)]">Beneficios</a>
-        <a href="#faq"        class="hover:text-[var(--flash-yellow)]">FAQ</a>
-      </nav>
-      <a href="#contacto"
-         class="hidden rounded-md bg-[var(--flash-yellow)] px-5 py-2 text-sm font-medium md:inline-block">
-        Contactanos
-      </a>
-      <button id="burger" class="md:hidden">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="6"  x2="21" y2="6"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
+<body class="bg-white text-gray-900">
+  <!-- Header limpio -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-5">
+      <div class="flex items-center gap-3">
+        <img src="assets/vectori.svg" alt="Factura Flash Logo" class="h-12 w-12 md:h-16 md:w-16 transition-transform hover:rotate-6">
+        <div class="font-bold text-2xl md:text-3xl text-yellow-500 drop-shadow-lg tracking-wide">Factura Flash</div>
+      </div>
+      <div class="hidden md:flex gap-2 ml-3">
+        <a href="mailto:contacto@mifacturaflash.com" class="px-4 py-2 bg-gray-800 text-white rounded-2xl font-semibold hover:bg-yellow-500 hover:text-gray-900 transition">Email</a>
+        <a href="https://wa.me/5491123456789" target="_blank" class="px-4 py-2 bg-yellow-400 text-gray-900 rounded-2xl font-bold shadow-md hover:bg-yellow-500 transition">WhatsApp</a>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="top"
-           class="relative flex items-center pt-16 pb-16 bg-gray-50 min-h-[80vh] overflow-hidden">
-    <!-- Decorative shapes -->
-    <div class="absolute -left-32 -top-16 h-56 w-56 rounded-full bg-[var(--flash-yellow)] opacity-20"></div>
-    <div class="absolute right-0 top-1/2 transform -translate-y-1/2 h-48 w-48 rounded-full bg-[var(--flash-orange)] opacity-15"></div>
+  <!-- Hero impactante con fondo animado y CTA -->
+  <section class="relative bg-gradient-to-br from-yellow-300/60 via-yellow-100 to-white py-16 md:py-28 flex flex-col items-center justify-center text-center overflow-hidden min-h-[70vh]">
+    <!-- Fondo animado onda SVG -->
+    <svg class="absolute top-0 left-0 wave" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 32L80 26.7C160 21 320 11 480 16C640 21 800 43 960 58.7C1120 75 1280 85 1360 90.7L1440 96V0H1360C1280 0 1120 0 960 0C800 0 640 0 480 0C320 0 160 0 80 0H0V32Z" fill="#FDE68A"/></svg>
+    <div class="relative z-10 flex flex-col items-center max-w-3xl w-full px-2">
+      <img src="assets/vectori.svg" alt="Flashito Mascota" class="h-32 md:h-48 animate-bounce mb-4 drop-shadow-2xl mx-auto">
+      <h1 class="text-3xl md:text-5xl font-black mb-4 text-gray-900 drop-shadow-[0_2px_6px_rgba(255,232,0,0.14)] leading-tight">Automatizá la facturación de tus clientes en segundos</h1>
+      <p class="text-lg md:text-2xl text-gray-700 mb-7 max-w-2xl mx-auto">La forma más práctica y segura de emitir facturas electrónicas al instante.<span class="font-bold text-yellow-500"> Ahorra tiempo</span> y evita errores.<br />Ideal para <span class="underline decoration-yellow-400">contadores</span> y <span class="underline decoration-yellow-400">monotributistas</span>.</p>
+      <div class="flex flex-col md:flex-row gap-4 mt-2 w-full justify-center">
+        <a href="https://wa.me/5491123456789" target="_blank" class="px-8 py-4 bg-yellow-400 text-gray-900 rounded-full font-bold text-lg shadow-xl hover:bg-yellow-500 transition duration-200 border-2 border-transparent hover:border-yellow-600 hover:scale-105">Contactar por WhatsApp</a>
+        <a href="#contacto" class="px-8 py-4 bg-gray-900 text-white rounded-full font-bold text-lg hover:bg-yellow-500 hover:text-gray-900 transition duration-200 border-2 border-transparent hover:border-gray-900 hover:scale-105">Enviar consulta</a>
+      </div>
+    </div>
+    <!-- Onda separadora inferior -->
+    <svg class="absolute bottom-0 left-0 wave" viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 32L80 42.7C160 53 320 75 480 69.3C640 64 800 32 960 16C1120 0 1280 0 1360 0L1440 0V64H1360C1280 64 1120 64 960 64C800 64 640 64 480 64C320 64 160 64 80 64H0V32Z" fill="#FDE68A"/></svg>
+  </section>
 
-    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-16">
-      <!-- Texto -->
-      <div class="flex flex-col justify-center gap-6">
-        <h1 class="text-4xl font-extrabold leading-tight md:text-5xl">
-          Automatizá la facturación de tus clientes en segundos.
-        </h1>
-        <p class="text-lg">
-          Transformá horas de carga manual en valor para tu estudio contable.
-        </p>
+  <!-- Separación visual -->
+  <div class="h-8 md:h-16"></div>
 
-        <ul class="space-y-2 text-base">
-          <li class="flex items-start gap-2">
-            <span class="text-[var(--flash-yellow)]">✔</span>
-            Ahorra <strong>hasta 20 h</strong> de trabajo repetitivo al mes
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-[var(--flash-yellow)]">✔</span>
-            Evita errores manuales con un clic
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-[var(--flash-yellow)]">✔</span>
-            Ofrecé un servicio<strong> premium</strong> a tus clientes
-          </li>
+  <!-- ¿Qué es Factura Flash? ATRACTIVO -->
+  <section id="quees" class="container mx-auto px-4 py-16 md:py-20 flex flex-col md:flex-row gap-14 md:gap-20 items-center bg-gradient-to-r from-yellow-50 via-white to-yellow-50 rounded-3xl shadow-lg mb-16">
+    <div class="flex-1 flex flex-col gap-6">
+      <h2 class="text-3xl md:text-4xl font-black text-yellow-500 mb-1 flex items-center gap-2">¿Qué es Factura Flash? <span class="text-2xl">⚡</span></h2>
+      <div class="bg-yellow-100 rounded-xl p-6 text-lg md:text-xl font-medium text-gray-900 shadow flex flex-col gap-3">
+        <span class="text-xl md:text-2xl font-bold text-gray-900">Automatizá tu facturación electrónica<br>y olvidate del trabajo repetitivo.</span>
+        <ul class="list-none mt-2 text-gray-800 space-y-1">
+          <li>• 100% legal y seguro.</li>
+          <li>• Integración directa con MercadoPago y WhatsApp.</li>
+          <li>• Ahorra horas por semana. Cero errores.</li>
+          <li>• Soporte humano real. Olvidate de tickets interminables.</li>
         </ul>
-
-        <a href="#contacto"
-           class="mt-4 w-max rounded-md bg-[var(--flash-yellow)] px-6 py-3 text-base font-medium">
-          Contactanos
-        </a>
       </div>
-
-      <!-- Imagen Flashito -->
-      <div class="relative flex items-center justify-center">
-        <img src="./flashito.svg"
-             alt="Mascota Flashito"
-             class="h-[380px] w-[380px] object-contain" />
-      </div>
+      <p class="mt-3 text-gray-700 text-base md:text-lg">Factura Flash automatiza la emisión de facturas en AFIP, reduce tareas manuales y te da tranquilidad total. Pensado para <span class="font-semibold text-yellow-600">contadores y monotributistas</span> que quieren tiempo libre y orden fiscal.</p>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <img src="assets/vectori.svg" alt="Logo Mascota Flashito" class="h-52 md:h-72 drop-shadow-lg animate-fade-in">
     </div>
   </section>
 
-  <!-- (Aquí irían las secciones Productos, Beneficios, FAQ, Contacto) -->
+  <!-- Separación visual -->
+  <div class="h-12 md:h-24"></div>
 
-  <script>
-    // Navbar shadow toggle on scroll
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('nav');
-      nav.classList.toggle('shadow', window.scrollY > 10);
-    });
-  </script>
+  <!-- Beneficios VISUAL y animados -->
+<section id="beneficios" class="relative z-10 container mx-auto px-4 py-12 md:py-20 mb-10">
+  <div class="absolute -top-12 left-0 w-full pointer-events-none select-none">
+    <svg class="w-full" height="32" viewBox="0 0 1440 64" fill="none"><path d="M0 32L80 35C160 38 320 46 480 43C640 40 800 26 960 27C1120 28 1280 45 1360 53L1440 61V0H1360C1280 0 1120 0 960 0C800 0 640 0 480 0C320 0 160 0 80 0H0V32Z" fill="#FEF08A"/></svg>
+  </div>
+  <h2 class="text-3xl md:text-4xl font-black text-gray-900 text-center mb-12">¿Por qué elegir <span class="text-yellow-500">Factura Flash</span>?</h2>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="flex flex-col items-center bg-white p-7 rounded-3xl shadow-xl border-b-4 border-yellow-300 group hover:scale-105 transition-transform">
+      <span class="text-4xl mb-2 animate-pulse">⚡</span>
+      <span class="font-semibold text-xl mb-2">Ahorra tiempo</span>
+      <span class="text-gray-600 text-center">Automatizá todo el proceso, sin tareas manuales repetitivas. Más horas libres.</span>
+    </div>
+    <div class="flex flex-col items-center bg-white p-7 rounded-3xl shadow-xl border-b-4 border-yellow-300 group hover:scale-105 transition-transform">
+      <span class="text-4xl mb-2 animate-bounce">🔒</span>
+      <span class="font-semibold text-xl mb-2">100% seguro</span>
+      <span class="text-gray-600 text-center">Cumplimiento fiscal asegurado, tu información siempre protegida.</span>
+    </div>
+    <div class="flex flex-col items-center bg-white p-7 rounded-3xl shadow-xl border-b-4 border-yellow-300 group hover:scale-105 transition-transform">
+      <span class="text-4xl mb-2 animate-spin-slow">🤖</span>
+      <span class="font-semibold text-xl mb-2">Tecnología fácil</span>
+      <span class="text-gray-600 text-center">Integrado con MercadoPago y WhatsApp. Sin complicaciones técnicas.</span>
+    </div>
+    <div class="flex flex-col items-center bg-white p-7 rounded-3xl shadow-xl border-b-4 border-yellow-300 group hover:scale-105 transition-transform">
+      <span class="text-4xl mb-2 animate-wiggle">🫱🏻‍🫲🏽</span>
+      <span class="font-semibold text-xl mb-2">Soporte humano</span>
+      <span class="text-gray-600 text-center">Te acompañamos en todo el proceso. Resolvemos tus dudas al instante.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Separador visual -->
+<div class="h-8 md:h-16"></div>
+
+<!-- Productos visual, con espacio para imagen mascota + logo -->
+<section id="productos" class="container mx-auto px-4 py-16 md:py-20 mb-12">
+  <div class="text-center mb-14">
+    <h2 class="text-3xl md:text-4xl font-black text-gray-900">Nuestros <span class="text-yellow-500">Productos</span></h2>
+    <p class="mt-2 text-lg text-gray-700">Soluciones para cada tipo de cliente.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+    <!-- Producto 1 -->
+    <div class="bg-white rounded-3xl shadow-xl border-b-4 border-yellow-300 flex flex-col md:flex-row items-center p-8 gap-6 md:gap-10 group hover:scale-105 transition-transform">
+      <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center">
+        <!-- Aquí va la mascota sosteniendo logo MercadoPago -->
+        <img src="assets/mascota-mercadopago.png" alt="Mascota con MercadoPago" class="w-full h-full object-contain rounded-2xl shadow-md">
+      </div>
+      <div class="flex-1">
+        <h3 class="text-2xl font-bold text-yellow-500 mb-2">Facturador Automático MP</h3>
+        <ul class="list-disc ml-5 mb-1 text-gray-700 text-base space-y-1">
+          <li>Emite facturas AFIP instantáneamente al cobrar en MercadoPago</li>
+          <li>PDF y registro automático, envío por WhatsApp</li>
+          <li>Sin errores, todo legal y seguro</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Producto 2 -->
+    <div class="bg-white rounded-3xl shadow-xl border-b-4 border-yellow-300 flex flex-col md:flex-row items-center p-8 gap-6 md:gap-10 group hover:scale-105 transition-transform">
+      <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 flex items-center justify-center">
+        <!-- Aquí va la mascota sosteniendo logo WhatsApp -->
+        <img src="assets/mascota-whatsapp.png" alt="Mascota con WhatsApp" class="w-full h-full object-contain rounded-2xl shadow-md">
+      </div>
+      <div class="flex-1">
+        <h3 class="text-2xl font-bold text-yellow-500 mb-2">Chatbot de Facturación WhatsApp</h3>
+        <ul class="list-disc ml-5 mb-1 text-gray-700 text-base space-y-1">
+          <li>Pedí facturas rápidas confirmando datos vía WhatsApp</li>
+          <li>Recibí el comprobante al instante, resumen a contadores</li>
+          <li>Perfecto para monotributistas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Separador visual -->
+<div class="h-12 md:h-20"></div>
+
+
+  <!-- Testimonios visual moderno -->
+<section id="testimonios" class="container mx-auto px-4 py-16 md:py-20">
+  <div class="text-center mb-14">
+    <h2 class="text-3xl md:text-4xl font-black text-gray-900">Lo que dicen nuestros clientes</h2>
+    <p class="mt-2 text-lg text-gray-700">Experiencias reales de usuarios Factura Flash</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 justify-center items-stretch">
+    <!-- Testimonio 1 -->
+    <div class="bg-white rounded-3xl shadow-xl border-b-4 border-yellow-300 flex flex-col items-center text-center p-8 gap-4 hover:scale-105 transition-transform">
+      <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center bg-yellow-100 border-4 border-yellow-200 shadow mb-2">
+        <img src="assets/testimonio-gerardo.jpg" alt="Gerardo Sanches" class="object-cover w-full h-full">
+      </div>
+      <p class="text-lg text-gray-700 italic">“Factura Flash me ahorra horas de trabajo cada semana. Emito facturas en segundos, y nunca tuve un problema.”</p>
+      <span class="font-bold text-yellow-500 text-lg mt-2">Gerardo Sanches</span>
+      <span class="text-gray-600 text-sm">Kinesiólogo</span>
+    </div>
+    <!-- Testimonio 2 -->
+    <div class="bg-white rounded-3xl shadow-xl border-b-4 border-yellow-300 flex flex-col items-center text-center p-8 gap-4 hover:scale-105 transition-transform">
+      <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center bg-yellow-100 border-4 border-yellow-200 shadow mb-2">
+        <img src="assets/testimonio-jose.jpg" alt="José Díaz" class="object-cover w-full h-full">
+      </div>
+      <p class="text-lg text-gray-700 italic">“Con Factura Flash hacer mis facturas es rapidísimo, ya no pierdo tiempo y es super práctico.”</p>
+      <span class="font-bold text-yellow-500 text-lg mt-2">José Díaz</span>
+      <span class="text-gray-600 text-sm">Gomero</span>
+    </div>
+  </div>
+</section>
+
+<!-- Separador visual -->
+<div class="h-10 md:h-20"></div>
+
+<!-- Equipo visual, cards modernas -->
+<section id="equipo" class="container mx-auto px-4 py-16 md:py-20">
+  <div class="text-center mb-14">
+    <h2 class="text-3xl md:text-4xl font-black text-gray-900">Nuestro <span class="text-yellow-500">equipo</span></h2>
+    <p class="mt-2 text-lg text-gray-700">Profesionales detrás de Factura Flash</p>
+  </div>
+  <div class="flex flex-col md:flex-row gap-10 md:gap-20 justify-center items-center">
+    <!-- Miembro 1 -->
+    <div class="bg-white rounded-3xl shadow-xl border-b-4 border-yellow-300 flex flex-col items-center text-center p-8 w-full md:w-96 hover:scale-105 transition-transform">
+      <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center bg-yellow-50 border-4 border-yellow-200 shadow mb-2">
+        <img src="assets/fotos/tu_foto.jpg" alt="Tu Nombre" class="object-cover w-full h-full">
+      </div>
+      <span class="font-bold text-xl text-gray-900">Tu Nombre</span>
+      <span class="text-gray-600 text-base mb-2">Cofundador & Desarrollador</span>
+      <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="px-4 py-2 bg-yellow-400 text-gray-900 rounded-xl font-semibold text-base hover:bg-yellow-500 transition mt-2">Ver LinkedIn</a>
+      <p class="mt-3 text-gray-700 text-base">Especialista en automatización y soluciones digitales para el sector contable.</p>
+    </div>
+    <!-- Miembro 2 -->
+    <div class="bg-white rounded-3xl shadow-xl border-b-4 border-yellow-300 flex flex-col items-center text-center p-8 w-full md:w-96 hover:scale-105 transition-transform">
+      <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center bg-yellow-50 border-4 border-yellow-200 shadow mb-2">
+        <img src="assets/fotos/socio_foto.jpg" alt="Socio Nombre" class="object-cover w-full h-full">
+      </div>
+      <span class="font-bold text-xl text-gray-900">Socio Nombre</span>
+      <span class="text-gray-600 text-base mb-2">Cofundador & Operaciones</span>
+      <a href="https://www.linkedin.com/in/socio-linkedin" target="_blank" class="px-4 py-2 bg-yellow-400 text-gray-900 rounded-xl font-semibold text-base hover:bg-yellow-500 transition mt-2">Ver LinkedIn</a>
+      <p class="mt-3 text-gray-700 text-base">Experiencia en gestión de clientes, soporte y procesos administrativos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Separador visual -->
+<div class="h-10 md:h-20"></div>
+<!-- Tutoriales en video -->
+<section id="tutoriales" class="container mx-auto px-4 py-16 md:py-20">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-black text-gray-900">Tutoriales en video</h2>
+    <p class="mt-2 text-lg text-gray-700">Mirá cómo usar Factura Flash en simples pasos</p>
+  </div>
+  <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+    <!-- Cambia los VIDEO_ID_X por los IDs reales de tus videos -->
+    <iframe width="360" height="215" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Tutorial Factura Flash" frameborder="0" allowfullscreen class="rounded-2xl shadow-lg"></iframe>
+    <iframe width="360" height="215" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Tutorial Factura Flash" frameborder="0" allowfullscreen class="rounded-2xl shadow-lg"></iframe>
+  </div>
+  <div class="mt-6 text-center">
+    <a href="https://www.youtube.com/@tu-canal" target="_blank" class="text-yellow-500 font-bold hover:underline">Ver todos los tutoriales</a>
+  </div>
+</section>
+
+<div class="h-10 md:h-20"></div>
+
+<!-- Contacto visual moderno -->
+<section id="contacto" class="bg-gray-100 py-16 md:py-20">
+  <div class="container mx-auto px-4 max-w-xl">
+    <h2 class="text-3xl md:text-4xl font-black mb-8 text-center text-gray-900">Contacto</h2>
+    <form action="mailto:contacto@mifacturaflash.com" method="POST" enctype="text/plain" class="flex flex-col gap-4 bg-white p-8 rounded-3xl shadow-lg border-b-4 border-yellow-300">
+      <input type="text" name="nombre" required placeholder="Nombre" class="p-3 rounded-xl border border-gray-300 focus:border-yellow-500 outline-none">
+      <input type="email" name="email" required placeholder="Email" class="p-3 rounded-xl border border-gray-300 focus:border-yellow-500 outline-none">
+      <textarea name="mensaje" required placeholder="Mensaje" rows="4" class="p-3 rounded-xl border border-gray-300 focus:border-yellow-500 outline-none"></textarea>
+      <button type="submit" class="bg-yellow-400 text-gray-900 font-bold rounded-xl py-3 hover:bg-yellow-500 transition">Enviar mensaje</button>
+    </form>
+    <div class="flex justify-center mt-8">
+      <a href="https://wa.me/5491123456789" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-green-500 text-white rounded-full font-bold shadow-lg text-lg hover:bg-green-600 transition">
+        <svg width="24" height="24" fill="none" viewBox="0 0 32 32"><path fill="#fff" d="M26.15 24.71l-1.15-4.21A11.23 11.23 0 1 1 16 4.77a11.21 11.21 0 0 1 10.22 15.73l-.45.91z"/><path fill="#25D366" d="M25 24.09 24 20.37a10.19 10.19 0 1 0-8 .38l.41.16.29.15-3.52 3.52a.51.51 0 0 0-.11.54c.12.33.59 1.61 1.1 3.07l4.14-1.13.28.14.32.12A10.23 10.23 0 1 0 25 24.09Z"/><path fill="#fff" d="M23.34 20.31a8.73 8.73 0 1 1-4.5-11.39c.38.17.66.55.69.97v2.23c0 .47-.29.89-.73 1a6.8 6.8 0 0 0-2.53 1.45c-2.4 2.12-2.88 5.4-2.41 7.41a1 1 0 0 0 1 .74h2.27c.42 0 .8.28.97.68a8.77 8.77 0 0 1 1.13 4.54Z"/></svg>
+        WhatsApp directo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer pro y botón WhatsApp flotante -->
+<footer class="bg-white py-6 mt-16 shadow-inner">
+  <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+    © 2025 Factura Flash. Todos los derechos reservados.
+  </div>
+</footer>
+
+<a href="https://wa.me/5491123456789" target="_blank" class="fixed bottom-6 right-6 z-50 bg-yellow-400 hover:bg-yellow-500 text-gray-900 p-4 rounded-full shadow-lg transition duration-200 flex items-center justify-center">
+  <svg width="24" height="24" fill="none" viewBox="0 0 32 32"><path fill=\"#25D366\" d=\"M16 3A13 13 0 1 0 26.91 23.74l1.37 5a1 1 0 0 1-1.21 1.21l-5-1.37A13 13 0 1 0 16 3Z\"/><path fill=\"#fff\" d=\"m26.15 24.71-1.15-4.21A11.23 11.23 0 1 1 16 4.77a11.21 11.21 0 0 1 10.22 15.73l-.45.91z\"/><path fill=\"#25D366\" d=\"M25 24.09 24 20.37a10.19 10.19 0 1 0-8 .38l.41.16.29.15-3.52 3.52a.51.51 0 0 0-.11.54c.12.33.59 1.61 1.1 3.07l4.14-1.13.28.14.32.12A10.23 10.23 0 1 0 25 24.09Z\"/><path fill=\"#fff\" d=\"M23.34 20.31a8.73 8.73 0 1 1-4.5-11.39c.38.17.66.55.69.97v2.23c0 .47-.29.89-.73 1a6.8 6.8 0 0 0-2.53 1.45c-2.4 2.12-2.88 5.4-2.41 7.41a1 1 0 0 0 1 .74h2.27c.42 0 .8.28.97.68a8.77 8.77 0 0 1 1.13 4.54Z\"/></svg>
+  <span class="ml-2 font-bold hidden md:inline">WhatsApp</span>
+</a>
+
+<!-- Footer y WhatsApp float igual que antes -->
+
 </body>
 </html>
