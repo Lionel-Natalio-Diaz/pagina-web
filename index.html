@@ -3,60 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Título y meta tags básicos -->
   <title>Factura Flash · Automatización de facturas para estudios contables</title>
   <meta name="description"
-        content="Automatizá la emisión de facturas de tus clientes en segundos y ofrecé un servicio premium a tus monotributistas." />
+        content="Automatizá la emisión de facturas de tus clientes en segundos y ofrecé un servicio premium a tu estudio contable." />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@700&display=swap"
         rel="stylesheet">
 
-  <!-- Tailwind vía CDN (modo production, 12 kB gz) -->
+  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Colores corporativos -->
   <style>
-    :root{
-      --flash-yellow:#FEC727;
-      --flash-orange:#F3843B;
-      --flash-grafito:#443A48;
-      --flash-bg:#F9FAFB;
+    :root {
+      --flash-yellow: #FEC727;
+      --flash-orange: #F3843B;
+      --flash-grafito: #443A48;
+      --flash-bg: #F9FAFB;
     }
-    body{font-family:Inter, sans-serif;background:var(--flash-bg);color:var(--flash-grafito);}
-    h1,h2,h3{font-family:Poppins, sans-serif;}
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--flash-bg);
+      color: var(--flash-grafito);
+    }
+    h1, h2, h3 {
+      font-family: Poppins, sans-serif;
+    }
   </style>
-
-  <!-- Lottie player (animaciones vectoriales) -->
 </head>
-
 <body class="scroll-smooth">
 
   <!-- NAVBAR -->
   <header id="nav"
           class="fixed inset-x-0 top-0 z-50 bg-[rgba(249,250,251,0.9)] backdrop-blur-md shadow-sm">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2">
-      <!-- Logo -->
       <a href="#top" class="flex items-center gap-2">
-        <img src="./flashito.svg" alt="Flashito" class="h-8 w-8" />
+        <img src="./flashito.svg" alt="Flashito" class="h-12 w-12 md:h-16 md:w-16" />
         <span class="font-bold text-lg tracking-tight">Factura Flash</span>
       </a>
-
-      <!-- Links (desktop) -->
       <nav class="hidden gap-8 md:flex">
         <a href="#productos" class="hover:text-[var(--flash-yellow)]">Productos</a>
         <a href="#beneficios" class="hover:text-[var(--flash-yellow)]">Beneficios</a>
         <a href="#faq"        class="hover:text-[var(--flash-yellow)]">FAQ</a>
       </nav>
-
-      <!-- CTA -->
       <a href="#contacto"
          class="hidden rounded-md bg-[var(--flash-yellow)] px-5 py-2 text-sm font-medium md:inline-block">
         Contactanos
       </a>
-
-      <!-- Burger (mobile) – simple placeholder -->
       <button id="burger" class="md:hidden">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -70,14 +63,17 @@
 
   <!-- HERO -->
   <section id="top"
-           class="flex min-h-screen items-center pt-24">
+           class="relative flex items-center pt-16 pb-16 bg-gray-50 min-h-[80vh] overflow-hidden">
+    <!-- Decorative shapes -->
+    <div class="absolute -left-32 -top-16 h-56 w-56 rounded-full bg-[var(--flash-yellow)] opacity-20"></div>
+    <div class="absolute right-0 top-1/2 transform -translate-y-1/2 h-48 w-48 rounded-full bg-[var(--flash-orange)] opacity-15"></div>
+
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-16">
       <!-- Texto -->
       <div class="flex flex-col justify-center gap-6">
         <h1 class="text-4xl font-extrabold leading-tight md:text-5xl">
           Automatizá la facturación de tus clientes en segundos.
         </h1>
-
         <p class="text-lg">
           Transformá horas de carga manual en valor para tu estudio contable.
         </p>
@@ -85,15 +81,15 @@
         <ul class="space-y-2 text-base">
           <li class="flex items-start gap-2">
             <span class="text-[var(--flash-yellow)]">✔</span>
-            Cumplimiento AFIP RG 4290
+            Ahorra <strong>hasta 20 h</strong> de trabajo repetitivo al mes
           </li>
           <li class="flex items-start gap-2">
             <span class="text-[var(--flash-yellow)]">✔</span>
-            PDF + CAE directo al mail del monotributista
+            Evita errores manuales con un clic
           </li>
           <li class="flex items-start gap-2">
             <span class="text-[var(--flash-yellow)]">✔</span>
-            Puesta en marcha &lt; 24 h
+            Ofrecé un servicio<strong> premium</strong> a tus clientes
           </li>
         </ul>
 
@@ -103,7 +99,7 @@
         </a>
       </div>
 
-      <!-- Animación Flashito -->
+      <!-- Imagen Flashito -->
       <div class="relative flex items-center justify-center">
         <img src="./flashito.svg"
              alt="Mascota Flashito"
@@ -112,15 +108,13 @@
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script>
-    // Carga de la animación (reemplazá 'flashito-lottie.json' por tu JSON real)
-    
+  <!-- (Aquí irían las secciones Productos, Beneficios, FAQ, Contacto) -->
 
-    // Navbar shadow al hacer scroll (opcional extra)
-    window.addEventListener('scroll',()=>{
-      const nav=document.getElementById('nav');
-      nav.classList.toggle('shadow',window.scrollY>10);
+  <script>
+    // Navbar shadow toggle on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('shadow', window.scrollY > 10);
     });
   </script>
 </body>
