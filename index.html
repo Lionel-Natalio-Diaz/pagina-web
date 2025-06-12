@@ -29,7 +29,6 @@
   </style>
 
   <!-- Lottie player (animaciones vectoriales) -->
-  <script src="https://unpkg.com/lottie-web@5.9.4/build/player/lottie.min.js"></script>
 </head>
 
 <body class="scroll-smooth">
@@ -106,8 +105,9 @@
 
       <!-- Animación Flashito -->
       <div class="relative flex items-center justify-center">
-        <!-- Contenedor donde se carga Lottie -->
-        <div id="flashitoAnimation" class="h-[380px] w-[380px]"></div>
+        <img src="./flashito.svg"
+             alt="Mascota Flashito"
+             class="h-[380px] w-[380px] object-contain" />
       </div>
     </div>
   </section>
@@ -115,13 +115,7 @@
   <!-- Scripts -->
   <script>
     // Carga de la animación (reemplazá 'flashito-lottie.json' por tu JSON real)
-    lottie.loadAnimation({
-      container: document.getElementById('flashitoAnimation'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: './flashito-lottie.json'
-    });
+    
 
     // Navbar shadow al hacer scroll (opcional extra)
     window.addEventListener('scroll',()=>{
