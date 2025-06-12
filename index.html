@@ -1,94 +1,133 @@
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 <head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <meta name='description' content='Factura Flash – Emite facturas electrónicas en segundos con automatización IA'>
-  <!-- Sustituye XXXXXX por tu valor real si usas verificación Meta -->
-  <meta name='facebook-domain-verification' content='XXXXXX'>
-  <title>Factura Flash | Automatización de Facturas</title>
-  <script src='https://cdn.tailwindcss.com'></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Título y meta tags básicos -->
+  <title>Factura Flash · Automatización de facturas para estudios contables</title>
+  <meta name="description"
+        content="Automatizá la emisión de facturas de tus clientes en segundos y ofrecé un servicio premium a tus monotributistas." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+
+  <!-- Tailwind vía CDN (modo production, 12 kB gz) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Colores corporativos -->
+  <style>
+    :root{
+      --flash-yellow:#FEC727;
+      --flash-orange:#F3843B;
+      --flash-grafito:#443A48;
+      --flash-bg:#F9FAFB;
+    }
+    body{font-family:Inter, sans-serif;background:var(--flash-bg);color:var(--flash-grafito);}
+    h1,h2,h3{font-family:Poppins, sans-serif;}
+  </style>
+
+  <!-- Lottie player (animaciones vectoriales) -->
+  <script src="https://unpkg.com/lottie-web@5.9.4/build/player/lottie.min.js"></script>
 </head>
-<body class='antialiased text-gray-800'>
-  <!-- Hero -->
-  <header class='bg-gradient-to-r from-amber-400 to-yellow-500 text-white'>
-    <div class='max-w-5xl mx-auto px-6 py-20 text-center'>
-      <h1 class='text-4xl md:text-5xl font-extrabold drop-shadow-lg'>Factura Flash</h1>
-      <p class='mt-4 text-lg md:text-xl font-medium'>Automatiza la emisión de facturas y simplifica tu contabilidad.</p>
-      <a href='#beneficios' class='mt-8 inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-full shadow hover:translate-y-[-2px] transition'>Descubre más</a>
+
+<body class="scroll-smooth">
+
+  <!-- NAVBAR -->
+  <header id="nav"
+          class="fixed inset-x-0 top-0 z-50 bg-[rgba(249,250,251,0.9)] backdrop-blur-md shadow-sm">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2">
+      <!-- Logo -->
+      <a href="#top" class="flex items-center gap-2">
+        <img src="./flashito.svg" alt="Flashito" class="h-8 w-8" />
+        <span class="font-bold text-lg tracking-tight">Factura Flash</span>
+      </a>
+
+      <!-- Links (desktop) -->
+      <nav class="hidden gap-8 md:flex">
+        <a href="#productos" class="hover:text-[var(--flash-yellow)]">Productos</a>
+        <a href="#beneficios" class="hover:text-[var(--flash-yellow)]">Beneficios</a>
+        <a href="#faq"        class="hover:text-[var(--flash-yellow)]">FAQ</a>
+      </nav>
+
+      <!-- CTA -->
+      <a href="#contacto"
+         class="hidden rounded-md bg-[var(--flash-yellow)] px-5 py-2 text-sm font-medium md:inline-block">
+        Contactanos
+      </a>
+
+      <!-- Burger (mobile) – simple placeholder -->
+      <button id="burger" class="md:hidden">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
     </div>
   </header>
 
-  <!-- Beneficios -->
-  <section id='beneficios' class='py-16 bg-gray-100'>
-    <div class='max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10'>
-      <div class='bg-white p-8 rounded-2xl shadow hover:shadow-lg transition'>
-        <h3 class='text-xl font-bold mb-2'>100% Automático</h3>
-        <p>Integra Mercado Pago y ARCA para que las facturas se generen solas, 24/7.</p>
+  <!-- HERO -->
+  <section id="top"
+           class="flex min-h-screen items-center pt-24">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 md:grid-cols-2 md:gap-16">
+      <!-- Texto -->
+      <div class="flex flex-col justify-center gap-6">
+        <h1 class="text-4xl font-extrabold leading-tight md:text-5xl">
+          Automatizá la facturación de tus clientes en segundos.
+        </h1>
+
+        <p class="text-lg">
+          Transformá horas de carga manual en valor para tu estudio contable.
+        </p>
+
+        <ul class="space-y-2 text-base">
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--flash-yellow)]">✔</span>
+            Cumplimiento AFIP RG 4290
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--flash-yellow)]">✔</span>
+            PDF + CAE directo al mail del monotributista
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-[var(--flash-yellow)]">✔</span>
+            Puesta en marcha &lt; 24 h
+          </li>
+        </ul>
+
+        <a href="#contacto"
+           class="mt-4 w-max rounded-md bg-[var(--flash-yellow)] px-6 py-3 text-base font-medium">
+          Contactanos
+        </a>
       </div>
-      <div class='bg-white p-8 rounded-2xl shadow hover:shadow-lg transition'>
-        <h3 class='text-xl font-bold mb-2'>Cumplimiento Fiscal</h3>
-        <p>Siempre al día con las normas AFIP — olvídate de multas y errores humanos.</p>
-      </div>
-      <div class='bg-white p-8 rounded-2xl shadow hover:shadow-lg transition'>
-        <h3 class='text-xl font-bold mb-2'>Ahorro de Tiempo</h3>
-        <p>Reduce tareas manuales y enfócate en hacer crecer tu negocio.</p>
+
+      <!-- Animación Flashito -->
+      <div class="relative flex items-center justify-center">
+        <!-- Contenedor donde se carga Lottie -->
+        <div id="flashitoAnimation" class="h-[380px] w-[380px]"></div>
       </div>
     </div>
   </section>
 
-  <!-- Cómo funciona -->
-  <section class='py-16'>
-    <div class='max-w-5xl mx-auto px-6'>
-      <h2 class='text-3xl font-extrabold text-center mb-12'>¿Cómo funciona?</h2>
-      <div class='space-y-10'>
-        <div class='flex flex-col md:flex-row items-start gap-6'>
-          <div class='text-4xl font-black text-amber-500'>1</div>
-          <div>
-            <h3 class='text-xl font-bold mb-2'>Conecta tus cuentas</h3>
-            <p>Enlaza Mercado Pago y concede acceso API a ARCA en solo unos clics.</p>
-          </div>
-        </div>
-        <div class='flex flex-col md:flex-row items-start gap-6'>
-          <div class='text-4xl font-black text-amber-500'>2</div>
-          <div>
-            <h3 class='text-xl font-bold mb-2'>Procesamiento inteligente</h3>
-            <p>Factura Flash detecta automáticamente cada cobro y prepara la factura electrónica.</p>
-          </div>
-        </div>
-        <div class='flex flex-col md:flex-row items-start gap-6'>
-          <div class='text-4xl font-black text-amber-500'>3</div>
-          <div>
-            <h3 class='text-xl font-bold mb-2'>Envío instantáneo</h3>
-            <p>La factura llega al cliente por e‑mail o WhatsApp, y queda registrada en AFIP.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Scripts -->
+  <script>
+    // Carga de la animación (reemplazá 'flashito-lottie.json' por tu JSON real)
+    lottie.loadAnimation({
+      container: document.getElementById('flashitoAnimation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: './flashito-lottie.json'
+    });
 
-  <!-- Llamado a la acción -->
-  <section class='py-16 bg-amber-50'>
-    <div class='max-w-3xl mx-auto px-6 text-center'>
-      <h2 class='text-3xl md:text-4xl font-extrabold mb-4'>¿Listo para facturar a la velocidad del rayo?</h2>
-      <p class='mb-8'>Solicita una demo gratuita y descubre cómo Factura Flash puede transformar tu negocio.</p>
-      <a href='mailto:hola@mifacturaflash.com' class='inline-block bg-amber-500 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-amber-600 transition'>Quiero mi demo</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class='bg-gray-900 text-gray-300 py-10'>
-    <div class='max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6'>
-      <div>
-        <h3 class='text-lg font-bold text-white'>Factura Flash</h3>
-        <p class='text-sm'>© 2025. Todos los derechos reservados.</p>
-      </div>
-      <nav class='flex gap-4'>
-        <a href='mailto:soporte@mifacturaflash.com' class='hover:text-white text-sm'>Soporte</a>
-        <a href='#' class='hover:text-white text-sm'>Términos</a>
-        <a href='#' class='hover:text-white text-sm'>Privacidad</a>
-      </nav>
-    </div>
-  </footer>
+    // Navbar shadow al hacer scroll (opcional extra)
+    window.addEventListener('scroll',()=>{
+      const nav=document.getElementById('nav');
+      nav.classList.toggle('shadow',window.scrollY>10);
+    });
+  </script>
 </body>
 </html>
